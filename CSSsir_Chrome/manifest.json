@@ -24,7 +24,7 @@
       "js": []
     }
   ],*/
-  "permissions": [],
+  "permissions": ["tabs"],
   "background": {
       "page": "chrome/main.html"
    }

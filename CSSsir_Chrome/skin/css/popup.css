@@ -1,11 +1,29 @@
 html, body{
     padding: 0;
-    margin: 0;    
+    margin: 0; 
+    font-size: 16px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;   
+    background: beige;
 }
 
 .gen-list{
     width:  200px;
     list-style: none;
-    padding: 0;
     margin: 0;
+    /*background: url(../images/gen_sprite.png) no-repeat 0 -2px;*/
+}
+
+.gen-list li{}
+
+.gen-list li a {
+    display:  block;
+    padding: 3px 15px 3px 40px;
+    text-decoration: none;
+    color: #000;
+}
+
+.gen-list li a:hover, .gen-list li a:focus{
+    border: 1px solid #dcf2fb;
+    background: #f0fafe;
+    padding: 2px 15px 2px 40px;
 }
