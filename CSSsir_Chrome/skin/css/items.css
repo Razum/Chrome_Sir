@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+
+.sir-txtRotation {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.code-area {
+    width: 100%;
+    clear: both;
+}
+
+
+.item-controls input[type=text] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+
+}
+
+.item-controls input[type=range] {
+    width: 200px;
+}
+
+
+.field {
+    width: 350px;
+    height: 250px;
+    float: left;
+    background: #fff;
+    display: table;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #e3e2e2;
+}
+.inscription {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}

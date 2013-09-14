@@ -1,14 +1,26 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="SIR" ng-csp>
 <head>
 	<meta http-equiv="content-type" content="text/html" />
     
 	<title></title>
+    <link rel="stylesheet" href="../../skin/css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../../skin/css/items.css" type="text/css"/>
 </head>
 
-<body>
+<body class="sir-txtRotation" data-item="txtrotation" ng-controller="txtRotationCtrl">
+<div class="field"><span id="TRinscription" class="inscription" ng-style="inscrStyle">Text Rotation</span></div>
+<div class="item-controls">
+    <p><span>Rotation:</span><input  min="0" max="360" step="1" type="range" id="TRrotDeg" value="{{angle}}" ng-model="angle"><input ng-model="angle" type="text" id="TRrotDegValue" value="{{angle}}" ></p>
+</div>
+<div class="control-panel"></div>
+<textarea rows="8" class="code-area" id="txtRotationResult">{{resultCode}}</textarea>
 
-<h1>Text Rotation</h1>
+<!--script src="../libs/jquery-2.0.3.min.js"></script>
+<script src="../libs/underscore-min.js"></script>
+<script src="../libs/backbone-min.js"></script-->
+<script src="../libs/angular.min.js"></script>
+<script src="../scripts/items.js"></script>
 
 </body>
 </html>
