@@ -390,3 +390,67 @@ SIR.controller('boxShadow', function ($scope, vendor) {
         $scope.resultCode = str;
     };
 });
+
+//////////////////////////
+//   Linear Gradient   //
+////////////////////////
+
+SIR.controller('linearGradientCtrl', function ($scope, vendor) {
+    $scope.stops = [
+        {val: 0, color: "#eb3838"},
+        {val: 0, color: "#d5d311"}
+    ];
+
+    $scope.angle = 0;
+
+    $scope.$watch('stops', onParamsChange, true);
+    $scope.$watch('angle', onParamsChange);
+
+    $scope.add = function () {
+        $scope.stops.push({val: 0, color: "#ccc"});
+    };
+    $scope.remove = function () {
+        $scope.stops.pop();
+    };
+
+    function onParamsChange () {
+        var W3Cangle = $scope.angle,
+            angle = (450 - $scope.angle) % 360,
+            ieFrom = $scope.stops[0].color,
+            ieTo = $scope.stops[$scope.stops.length - 1].color,
+            ieType = Math.abs(angle) === 90 ? 0 : 1;
+        var str = "", stop_arr = [],
+            webkit_stop_arr = [];
+
+        $scope.stops.sort(function (a, b){
+            return a.val - b.val;
+        });
+
+
+        for(var i = 0, len = $scope.stops.length; i<len; i++) {
+            stop_arr.push($scope.stops[i].color + " " + $scope.stops[i].val + "%");
+            webkit_stop_arr.push("color-stop(" + $scope.stops[i].val + "%, " + $scope.stops[i].color + ")");
+        }
+        $scope.blockStyle = {backgroundImage: "-webkit-gradient(linear, " + angle + "deg, " + webkit_stop_arr.join(", ")};
+        $scope.blockStyle = {backgroundImage: "-webkit-linear-gradient(" + angle + "deg, " + stop_arr.join(", ")};
+
+
+        str += "background: -moz-linear-gradient(" + angle + "deg, " + stop_arr.join(", ") + ");/* FF3.6+ */\n";
+        str += "background: -webkit-gradient(linear, " + angle + "deg, " + webkit_stop_arr.join(", ") + ");/* Chrome,Safari4+ */\n";
+        str += "background: -webkit-linear-gradient(" + angle + "deg, " + stop_arr.join(", ") + ");/* Chrome10+,Safari5.1+ */\n";
+        str += "background: -o-linear-gradient(" + angle + "deg, " + stop_arr.join(", ") + ");/* Opera 11.10+ */\n";
+        str += "background: -ms-linear-gradient(" + angle + "deg, " + stop_arr.join(", ") + ");/* IE10+ */\n";
+        str += "filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='" + ieFrom + "', endColorstr='" + ieTo + "', GradientType='" + ieType + "'); /* for IE */\n";
+        str += "background: linear-gradient(" + W3Cangle + "deg, " + stop_arr.join(", ") + ");/* W3C */"
+
+        $scope.resultCode = str;
+
+
+
+    }
+});
+
+
+
+
+
