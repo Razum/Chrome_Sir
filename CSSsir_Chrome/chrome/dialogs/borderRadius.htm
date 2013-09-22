@@ -1,14 +1,31 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="SIR" ng-csp>
 <head>
 	<meta http-equiv="content-type" content="text/html" />
     
 	<title></title>
+    <link rel="stylesheet" href="../../skin/css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../../skin/css/items.css" type="text/css"/>
 </head>
 
-<body>
+<body class="sir-borderRadius" ng-controller="borderRadiusCtrl">
 
-<h1>Border Radius</h1>
 
+<div class="field"><div class="square" ng-style="blockStyle"></div></div>
+<div class="item-controls">
+    <p><span>Style:</span><select ng-model="brStyle" ng-options="brStyle for brStyle in brStyles"></select></p>
+    <p><span>Width:</span><input  min="0" max="30" step="1" type="range" ng-model="width"><input ng-model="width" type="text"></p>
+    <p><span>Radius T-Left:</span><input  min="0" max="90" step="1" type="range" ng-model="brTL"><input ng-model="brTL" type="text" ></p>
+    <p><span>Radius T-Right:</span><input  min="0" max="90" step="1" type="range" ng-model="brTR"><input type="text" ng-model="brTR" ></p>
+    <p><span>Radius B-Right:</span><input  min="0" max="90" step="1" type="range" ng-model="brBR"><input type="text" ng-model="brBR" ></p>
+    <p><span>Radius B-Left:</span><input  min="0" max="90" step="1" type="range" ng-model="brBL"><input type="text" ng-model="brBL" ></p>
+    <p><span>Border color:</span> <input type="color" ng-model="color"> </p>
+</div>
+<div class="control-panel"></div>
+<textarea rows="8" class="code-area">{{resultCode}}</textarea>
+
+
+<script src="../libs/angular.min.js"></script>
+<script src="../scripts/items.js"></script>
 </body>
 </html>

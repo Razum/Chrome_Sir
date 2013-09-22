@@ -1,19 +1,6 @@
 @charset "UTF-8";
 
 
-.sir-txtRotation {
-    padding: 15px 15px;
-    background-color: #f8f8f8;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-}
-
-.code-area {
-    width: 100%;
-    clear: both;
-}
-
-
 .item-controls input[type=text] {
     -webkit-appearance: none;
     appearance: none;
@@ -28,7 +15,6 @@
     width: 200px;
 }
 
-
 .field {
     width: 350px;
     height: 250px;
@@ -37,11 +23,138 @@
     display: table;
     border-radius: 15px;
     box-shadow: 0 0 5px #e3e2e2;
+    position: relative;
 }
-.inscription {
+
+.code-area {
+    width: 100%;
+    clear: both;
+}
+
+
+
+
+
+.sir-txtRotation {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.sir-txtRotation .inscription {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     font-size: 36px;
     font-weight: bold;
+}
+
+
+/*RGBA*/
+.sir-txtRGBA {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sir-txtRGBA .square {
+    width: 150px;
+    height: 150px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -75px 0 0 -75px;
+}
+
+/*Transform*/
+.sir-transform {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sir-transform .square {
+    width: 150px;
+    height: 150px;
+    background: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -75px 0 0 -75px;
+}
+
+/* Multiple columns */
+.sir-txtColumns {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* border-radius */
+.sir-borderRadius {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sir-borderRadius .square {
+    width: 150px;
+    height: 150px;
+    background: #e1dfdf;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -75px 0 0 -75px;
+}
+
+/* Outline */
+.sir-outline {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sir-outline .square {
+    width: 150px;
+    height: 150px;
+    background: #e1dfdf;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -75px 0 0 -75px;
+}
+
+/* Text Shadow */
+.sir-txtShadow {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sir-txtShadow .inscription {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Box Shadow */
+
+.sir-boxShadow {
+    padding: 15px 15px;
+    background-color: #f8f8f8;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sir-boxShadow .square {
+    width: 150px;
+    height: 150px;
+    background: #e1dfdf;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -75px 0 0 -75px;
 }

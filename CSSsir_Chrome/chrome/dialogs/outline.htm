@@ -1,14 +1,28 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="SIR" ng-csp>
 <head>
 	<meta http-equiv="content-type" content="text/html" />
-    
+    <link rel="stylesheet" href="../../skin/css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../../skin/css/items.css" type="text/css"/>
 	<title></title>
 </head>
 
-<body>
+<body class="sir-outline" ng-controller="OutlineCtrl">
 
-<h1>Outline</h1>
+<div class="field"><div class="square" ng-style="blockStyle"></div></div>
+<div class="item-controls">
 
+
+    <p><span>Style:</span><select ng-model="outlineStyle" ng-options="outlineStyle for outlineStyle in outlineStyles"></select></p>
+
+    <p><span>Width:</span><input  min="0" max="30" step="1" type="range" ng-model="width"><input ng-model="width" type="text"></p>
+    <p><span>Offset:</span><input  min="0" max="30" step="1" type="range" ng-model="offset"><input ng-model="offset" type="text"></p>
+    <p><span>Color:</span> <input type="color" ng-model="color"> </p>
+</div>
+<div class="control-panel"></div>
+<textarea rows="8" class="code-area">{{resultCode}}</textarea>
+
+<script src="../libs/angular.min.js"></script>
+<script src="../scripts/items.js"></script>
 </body>
 </html>

@@ -1,14 +1,39 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="SIR" ng-csp>
 <head>
-	<meta http-equiv="content-type" content="text/html" />
-    
-	<title></title>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="google" value="notranslate">
+    <link rel="stylesheet" href="../../skin/css/reset.css" type="text/css"/>
+    <link rel="stylesheet" href="../../skin/css/items.css" type="text/css"/>
+    <title></title>
 </head>
 
-<body>
+<body class="sir-txtShadow" ng-controller="txtShadow">
 
-<h1>Text Shadow</h1>
+<div class="field"><span class="inscription" ng-style="inscrStyle">Text Rotation</span></div>
+<div class="item-controls">
+     <p><a href="#" ng-click="add()">Add</a><a href="#" ng-click="remove()">Remove</a></p>
+    <ul>
+        <li ng-repeat="shadow in shadows | limitTo:5">
+            <p><a href="#">Customize</a></p>
+            <div>
+                <p><span>Horizontal:</span><input  min="-75" max="75" step="1" type="range" ng-model="shadow.horLen"><input ng-model="shadow.horLen" type="text"></p>
+                <p><span>Vertical:</span><input  min="-75" max="75" step="1" type="range" ng-model="shadow.verLen"><input ng-model="shadow.verLen" type="text"></p>
+                <p><span>Blur:</span><input  min="0" max="50" step="1" type="range" ng-model="shadow.blur"><input ng-model="shadow.blur" type="text"></p>
+                <p><span>Color:</span> <input type="color" ng-model="shadow.color"> </p>
+            </div>
 
+        </li>
+    </ul>
+
+
+
+
+</div>
+<div class="control-panel"></div>
+<textarea rows="8" class="code-area">{{resultCode}}</textarea>
+
+<script src="../libs/angular.min.js"></script>
+<script src="../scripts/items.js"></script>
 </body>
 </html>
